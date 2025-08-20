@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="report-container" class="container">
+        <div class="header">
+            <h2>Player Report</h2>
+            <button id="close-btn" class="close-btn">&times;</button>
+        </div>
+        
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="cheating">Cheating/Hacking</option>
+                <option value="harassment">Harassment</option>
+                <option value="exploit">Exploiting</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Report Details</label>
+            <textarea id="message" placeholder="Please provide detailed information..." rows="4"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="player">Player (optional)</label>
+            <select id="player">
+                <option value="">Select a player</option>
+            </select>
+        </div>
+        
+        <button id="submit-btn" class="submit-btn">Submit Report</button>
+    </div>
 
+    <div id="admin-container" class="container admin-panel">
+        <div class="header">
+            <h2>Admin Reports</h2>
+            <button id="admin-close-btn" class="close-btn">&times;</button>
+        </div>
+        
+        <div class="admin-controls">
+            <button id="refresh-btn" class="control-btn">Refresh</button>
+        </div>
+        
+        <table class="reports-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Player</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Time</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="reports-list">
+            </tbody>
+        </table>
+        
+        <div id="report-details" class="report-details">
+            <h3>Report Details</h3>
+            <div id="details-content"></div>
+            <div class="action-buttons">
+                <button id="goto-btn" class="action-btn goto">Goto</button>
+                <button id="bring-btn" class="action-btn bring">Bring</button>
+                <button id="close-btn" class="action-btn close">Close Report</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
